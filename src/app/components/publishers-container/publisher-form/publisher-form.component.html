@@ -1,0 +1,7 @@
+<form [formGroup]="publisherForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Publisher Name:</label>
+    <input id="name" formControlName="name" type="text" />
+  </div>
+    <button type="submit">Submit</button>
+</form>
