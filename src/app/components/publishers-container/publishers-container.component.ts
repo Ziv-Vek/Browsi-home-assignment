@@ -73,4 +73,16 @@ export class PublishersContainerComponent implements OnInit {
       console.error("Error loading domains:", error);
     }
   }
+
+  async deletePublisher(publisherName: string) {
+    try {
+      const res = await axiosClient.delete(`/api/publishers/${publisherName}`);
+
+      if (res.status === 201) {
+        this.GetPublishers();  // Refresh the list after deletion
+      }
+    } catch (error) {
+      console.error("Error deleting publisher:", error);
+    }
+  }
 }

@@ -9,7 +9,7 @@
 
   <!-- Display publishers and fetch their domains on click -->
   <div *ngFor="let publisher of publishers">
-    <app-publisher-card [publisher]="publisher" (click)="fetchDomains(publisher.publisher)">
+    <app-publisher-card [publisher]="publisher" (click)="fetchDomains(publisher.publisher)" (deletePublisher)="deletePublisher($event)">
     </app-publisher-card>
   </div>
 

@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {DomainCardComponent} from "../domain-card/domain-card.component";
 import {CommonModule} from "@angular/common";
 import {Publisher} from "../../../types";
@@ -15,7 +15,13 @@ import {Publisher} from "../../../types";
 })
 export class PublisherCardComponent {
   @Input() publisher!: Publisher;
+  @Output() deletePublisher = new EventEmitter<string>();
 
   constructor() {
   }
+
+  onDeletePublisher() {
+    this.deletePublisher.emit(this.publisher.publisher);
+  }
+
 }
